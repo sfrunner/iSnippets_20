@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.contrib.auth import views
+from snippets import views as snippets_views
 
 urlpatterns = [
+    #url(r'^login/', views.login, name="login"),
+    #url(r'^logout/', views.logout, name="logout"),
+    url(r'^addsnippets/', snippets_views.snippets_form, name="addsnippets"),
+    url(r'^snippets/', snippets_views.snippets_view, name="snippets"),
     url(r'^admin/', admin.site.urls),
 ]
