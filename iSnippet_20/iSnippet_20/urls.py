@@ -22,6 +22,7 @@ urlpatterns = [
     #url(r'^login/', views.login, name="login"),
     #url(r'^logout/', views.logout, name="logout"),
     url(r'^addsnippets/', snippets_views.snippets_form, name="addsnippets"),
-    url(r'^snippets/', snippets_views.snippets_view, name="snippets"),
+    url(r'^snippets/', snippets_views.SnippetDetailView.as_view(), name="snippets"),
     url(r'^admin/', admin.site.urls),
+    url(r'^deletesnippet/(?P<snippet_id>.*)$', snippets_views.delete, name='delete-person'),
 ]

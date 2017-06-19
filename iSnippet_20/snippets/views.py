@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .models import Snippet
 from django.http import HttpResponseRedirect
 from .form import SnippetForm
+from django.views.generic.list import ListView
+
 # Create your views here.
 
 #import snippets to render
@@ -18,7 +20,14 @@ def snippets_form(request):
         form = SnippetForm()
     return render(request, "addSnippets.html", {"form": form})
 
-def snippets_view(request):
-    snippets = Snippet.objects.all()
+class SnippetDetailView(ListView):
 
-    return render(request, "showSnippets.html", {"snippets_list": snippets} )
+    model = Snippet
+    context_object_name = "snippets_list"
+    queryset = Snippet.objects.all()
+    template_name = "showSnippets.html"
+
+def delete(request, snippet_id):
+    query = Snippet.objects.get(id=snippet_id)
+    query.delete()
+    return HttpResponseRedirect("/snippets/")
