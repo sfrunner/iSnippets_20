@@ -1,1 +1,1 @@
-web: gunicorn djangosf:app
+web: gunicorn iSnippet_20:app
