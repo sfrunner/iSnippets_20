@@ -1,4 +1,6 @@
 from django import forms
+from django.forms import ModelForm
+from .models import Snippet
 
 class SnippetForm(forms.Form):
     snippet_title = forms.CharField(label="Title", max_length = 80)

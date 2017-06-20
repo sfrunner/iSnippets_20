@@ -25,5 +25,4 @@ urlpatterns = [
     url(r'^snippets/', snippets_views.SnippetDetailView.as_view(), name="snippets"),
     url(r'^admin/', admin.site.urls),
     url(r'^deletesnippet/(?P<snippet_id>.*)$', snippets_views.delete, name='delete-person'),
-    url(r'^updatesnippets/', snippets_views.manage_snippets, name="updatesnippets"),
 ]

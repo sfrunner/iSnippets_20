@@ -3,6 +3,7 @@ from .models import Snippet
 from django.http import HttpResponseRedirect
 from .form import SnippetForm
 from django.views.generic.list import ListView
+from django.forms import modelformset_factory
 
 # Create your views here.
 
@@ -31,3 +32,15 @@ def delete(request, snippet_id):
     query = Snippet.objects.get(id=snippet_id)
     query.delete()
     return HttpResponseRedirect("/snippets/")
+
+def manage_snippets(request):
+    SnippetFormSet = modelformset_factory(Snippet, fields=('title', 'language', 'codeSnippet', 'description', 'author'))
+    if request.method == 'POST':
+        formset = SnippetFormSet(request.POST, request.FILES)
+        if formset.is_valid():
+            formset.save()
+            # do something.
+            return HttpResponseRedirect("/updatesnippets/")
+    else:
+        formset = SnippetFormSet()
+    return render(request, 'manageSnippets.html', {'formset': formset})
