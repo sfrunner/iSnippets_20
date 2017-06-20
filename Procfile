@@ -1,1 +1,1 @@
-web: gunicorn iSnippet_20:app
+web: gunicorn snippets:app
