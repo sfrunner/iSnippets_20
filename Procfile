@@ -1,1 +1,1 @@
-web: gunicorn snippets:app
+web: gunicorn iSnippet_20.wsgi:application 
