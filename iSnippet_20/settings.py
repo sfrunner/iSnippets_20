@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'snippets.apps.SnippetsConfig'
+    'snippets.apps.SnippetsConfig',
 ]
 
 MIDDLEWARE = [
@@ -142,6 +142,3 @@ STATICFILES_DIRS = (
 # https://warehouse.python.org/project/whitenoise/
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
