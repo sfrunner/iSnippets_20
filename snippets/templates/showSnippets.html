@@ -34,22 +34,22 @@
                     <div class="jumbotron">
                         <ul>
                             <li>
-                                Title: {{snippet.title}}
+                                <strong>Title:</strong> {{snippet.title}}
                             </li>
                             <li>
-                                Language: {{snippet.language}}
+                                <strong>Language:</strong> {{snippet.language}}
                             </li>
                             <li>
-                                Code Snippet
+                                <strong>Code Snippet</strong>
                                 <pre>
                                     {{snippet.codeSnippet}}
                                 </pre>
                             </li>
                             <li>
-                                Description: {{snippet.description}}
+                                <strong>Description:</strong> {{snippet.description}}
                             </li>
                             <li>
-                                Author: {{snippet.author}}
+                                <strong>Author:</strong> {{snippet.author}}
                             </li>
                         </ul>
                         <form method="delete" action="/deletesnippet/{{ snippet.id }}">
