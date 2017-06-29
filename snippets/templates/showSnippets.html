@@ -12,11 +12,6 @@
     <body>
         <div class="container-fluid">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
         <a class="navbar-brand" href="#">iSnippets</a>
       </div>
       <div class="collapse navbar-collapse">
@@ -39,21 +34,22 @@
                     <div class="jumbotron">
                         <ul>
                             <li>
-                                {{snippet.title}}
+                                Title: {{snippet.title}}
                             </li>
                             <li>
-                                {{snippet.language}}
+                                Language: {{snippet.language}}
                             </li>
                             <li>
+                                Code Snippet
                                 <pre>
                                     {{snippet.codeSnippet}}
                                 </pre>
                             </li>
                             <li>
-                                {{snippet.description}}
+                                Description: {{snippet.description}}
                             </li>
                             <li>
-                                {{snippet.author}}
+                                Author: {{snippet.author}}
                             </li>
                         </ul>
                         <form method="delete" action="/deletesnippet/{{ snippet.id }}">
