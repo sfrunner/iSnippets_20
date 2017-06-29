@@ -75,25 +75,12 @@ WSGI_APPLICATION = 'iSnippet_20.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-#DATABASES = {
- #   'default': {
-  #      'ENGINE': 'django.db.backends.sqlite3',
-   #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    #}
-#}
-
-#PRODUCTION: POSTGRESQL
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd17n1k0h4ls1bd',
-        'USER': 'ttjtdvwukrwqyv',
-        'PASSWORD': '1524b2e7b2cf79ca464c495dd17793a8836fe3bab81dfccfecb16b88e77cbe06',
-        'HOST': 'ec2-107-20-255-96.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
